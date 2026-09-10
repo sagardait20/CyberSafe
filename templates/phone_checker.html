@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Phone Number Checker - CyberSafe</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <nav class="navbar">
+
+        <div class="logo">
+            🛡️ CyberSafe
+        </div>
+
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/awareness">Awareness</a>
+            <a href="/phone-checker">Phone Checker</a>
+            <a href="/email-checker">Email Checker</a>
+            <a href="/url-checker">URL Checker</a>
+            <a href="/report-number">🚨 Report Cybercrime</a>
+        </div>
+
+    </nav>
+
+    <section class="checker-page">
+
+        <h1>Phone Number Risk Checker</h1>
+
+        <p>
+            Enter a phone number to check whether it has
+            been reported in our database.
+        </p>
+
+       <form method="POST">
+
+    <input
+        type="text"
+        name="phone_number"
+        placeholder="Enter phone number"
+        required
+    >
+
+    <button type="submit">
+        Check Number
+    </button>
+
+</form>
+{% if report %}
+
+    <div class="result-box">
+        <h2>⚠ Report Found</h2>
+
+        <p>
+            <strong>Phone Number:</strong>
+            {{ report["phone_number"] }}
+        </p>
+
+        <p>
+            <strong>Report Type:</strong>
+            {{ report["report_type"] }}
+        </p>
+
+        <p>
+            <strong>Description:</strong>
+            {{ report["description"] }}
+        </p>
+    </div>
+
+{% else %}
+
+    {% if request.method == "POST" %}
+        <div class="result-box safe">
+            <h2>No Reports Found</h2>
+
+            <p>
+                This number has not been reported in
+                the CyberSafe database.
+            </p>
+        </div>
+    {% endif %}
+
+{% endif %}
+
+    </section>
+
+</body>
+</html>

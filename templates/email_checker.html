@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Email Checker - CyberSafe</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <nav class="navbar">
+
+        <div class="logo">
+            🛡️ CyberSafe
+        </div>
+
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/awareness">Awareness</a>
+            <a href="/phone-checker">Phone Checker</a>
+            <a href="/report-number">Report Number</a>
+            <a href="/email-checker">Email Checker</a>
+            <a href="/url-checker">URL Checker</a>
+            <a href="/report-cybercrime">🚨 Report Cybercrime</a>
+        </div>
+
+    </nav>
+
+    <section class="checker-page">
+
+        <h1>Email Spam & Phishing Checker</h1>
+
+        <p>
+            Paste an email or message below to check for
+            suspicious patterns.
+        </p>
+
+        <form method="POST">
+
+            <textarea
+                name="email_text"
+                placeholder="Paste the email or message here..."
+                required
+            ></textarea>
+
+            <button type="submit">
+                Check Message
+            </button>
+
+        </form>
+
+    {% if risk_level %}
+
+<div class="result-box">
+
+    <h2>{{ risk_level }}</h2>
+
+    <p>
+        <strong>Risk Score:</strong> {{ risk_score }}
+    </p>
+
+    {% if found_keywords %}
+
+        <p>
+            <strong>Suspicious patterns detected:</strong>
+        </p>
+
+        <ul>
+            {% for keyword in found_keywords %}
+                <li>{{ keyword }}</li>
+            {% endfor %}
+        </ul>
+
+        {% if reasons %}
+
+            <h3>Why is this message suspicious?</h3>
+
+            <ul>
+                {% for reason in reasons %}
+                    <li>{{ reason }}</li>
+                {% endfor %}
+            </ul>
+
+        {% endif %}
+
+    {% else %}
+
+        <p>
+            No suspicious patterns were detected
+            by the current rules.
+        </p>
+
+    {% endif %}
+
+</div>
+
+{% endif %}
+
+    </section>
+
+</body>
+</html>

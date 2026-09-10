@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>URL Checker - CyberSafe</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <nav class="navbar">
+
+        <div class="logo">
+            🛡️ CyberSafe
+        </div>
+
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/phone-checker">Phone Checker</a>
+            <a href="/report-number">Report Number</a>
+            <a href="/email-checker">Email Checker</a>
+            <a href="/url-checker">URL Checker</a>
+            <a href="/report-cybercrime">🚨 Report Cybercrime</a>
+        </div>
+
+    </nav>
+
+    <section class="checker-page">
+
+        <h1>🔗 URL Safety Checker</h1>
+
+        <p>
+            Enter a website URL to check for
+            suspicious patterns.
+        </p>
+
+        <form method="POST">
+
+            <input
+                type="text"
+                name="url"
+                placeholder="https://example.com"
+                required
+            >
+
+            <button type="submit">
+                Check URL
+            </button>
+
+        </form>
+
+        {% if risk_level %}
+
+<div class="result-box">
+
+    {% if risk_level == "High Risk" %}
+        <h2 class="risk-high">{{ risk_level }}</h2>
+    {% elif risk_level == "Medium Risk" %}
+        <h2 class="risk-medium">{{ risk_level }}</h2>
+    {% else %}
+        <h2 class="risk-low">{{ risk_level }}</h2>
+    {% endif %}
+
+    <p>
+        <strong>Risk Score:</strong> {{ risk_score }}
+    </p>
+
+    {% if found_patterns %}
+
+        <h3>Suspicious patterns detected:</h3>
+
+        <ul>
+            {% for pattern in found_patterns %}
+                <li>{{ pattern }}</li>
+            {% endfor %}
+        </ul>
+
+        <h3>Why is this URL suspicious?</h3>
+
+        {% if "IP Logger" in found_patterns %}
+            <div class="warning-box">
+                <h3>🔴 IP Logger Detected</h3>
+                <p>
+                    This URL is associated with an IP tracking service.
+                    Opening this type of link may expose your public IP address
+                    and approximate location to the link operator.
+                </p>
+            </div>
+        {% elif "Tracking" in found_patterns %}
+            <div class="warning-box">
+                <h3>🟠 Tracking Service Detected</h3>
+                <p>
+                    This URL is associated with a tracking service that
+                    may collect information about visitors.
+                </p>
+            </div>
+        {% elif "URL Shortener" in found_patterns %}
+            <div class="warning-box">
+                <h3>🟠 URL Shortener Detected</h3>
+                <p>
+                    This shortened URL hides its final destination.
+                    Verify the destination before opening it.
+                </p>
+            </div>
+        {% endif %}
+
+        {% if reasons %}
+            <ul>
+                {% for reason in reasons %}
+                    <li>{{ reason }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+    {% else %}
+
+        <p>
+            No suspicious patterns were detected
+            by the current rules.
+        </p>
+
+    {% endif %}
+
+</div>
+
+{% endif %}
+
+    </section>
+
+</body>
+</html>

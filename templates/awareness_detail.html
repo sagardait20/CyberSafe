@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ threat.title }} - CyberSafe</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<nav class="navbar">
+
+    <div class="logo">
+        🛡️ CyberSafe
+    </div>
+
+    <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="/awareness">Awareness</a>
+        <a href="/phone-checker">Phone Checker</a>
+        <a href="/email-checker">Email Checker</a>
+        <a href="/url-checker">URL Checker</a>
+        <a href="/report-number">Report Number</a>
+        <a href="/report-cybercrime">🚨 Report Cybercrime</a>
+    </div>
+
+</nav>
+
+
+<section class="awareness-detail">
+
+    <div class="detail-container">
+
+        <div class="detail-icon">
+            {{ threat.icon }}
+        </div>
+
+        <h1>{{ threat.title }}</h1>
+
+        <p class="detail-description">
+            {{ threat.description }}
+        </p>
+
+
+        <div class="detail-card">
+
+            <h2>⚠️ Warning Signs</h2>
+
+            <ul>
+                {% for sign in threat.warning_signs %}
+                    <li>{{ sign }}</li>
+                {% endfor %}
+            </ul>
+
+        </div>
+
+
+        <div class="detail-card">
+
+            <h2>🛡️ How to Protect Yourself</h2>
+
+            <ul>
+                {% for tip in threat.safety %}
+                    <li>{{ tip }}</li>
+                {% endfor %}
+            </ul>
+
+        </div>
+
+
+        <a href="/awareness" class="btn secondary-btn">
+            ← Back to Awareness
+        </a>
+
+    </div>
+
+</section>
+
+</body>
+</html>

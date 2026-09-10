@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Report a Number - CyberSafe</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <nav class="navbar">
+
+        <div class="logo">
+            🛡️ CyberSafe
+        </div>
+
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/awareness">Awareness</a>
+            <a href="/phone-checker">Phone Checker</a>
+            <a href="/email-checker">Email Checker</a>
+            <a href="/url-checker">URL Checker</a>
+            <a href="/report-cybercrime">🚨 Report Cybercrime</a>
+        </div>
+
+    </nav>
+
+    <section class="report-number-page">
+
+        <h1>Report a Suspicious Number</h1>
+
+        <p>
+            Help others by reporting a phone number
+            involved in suspicious or fraudulent activity.
+        </p>
+
+        <form method="POST" class="report-form">
+
+            <input
+                type="text"
+                name="phone_number"
+                placeholder="Enter phone number"
+                required
+            >
+
+            <select name="report_type" required>
+                <option value="">Select scam type</option>
+                <option value="UPI Fraud">UPI Fraud</option>
+                <option value="OTP Scam">OTP Scam</option>
+                <option value="Fake KYC">Fake KYC</option>
+                <option value="Job Scam">Job Scam</option>
+                <option value="Investment Scam">Investment Scam</option>
+                <option value="Other">Other</option>
+            </select>
+
+            <textarea
+                name="description"
+                placeholder="Describe what happened"
+                required
+            ></textarea>
+
+            <button type="submit">
+                Submit Report
+            </button>
+
+        </form>
+
+        {% if message %}
+
+    <div class="success-message">
+        <h2>✓ Report Submitted</h2>
+
+        <p>{{ message }}</p>
+
+        <p>
+            Thank you for helping make the CyberSafe community safer.
+        </p>
+    </div>
+
+{% endif %}
+
+    </section>
+
+</body>
+</html>
