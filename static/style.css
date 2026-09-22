@@ -1,505 +1,104 @@
+/* =========================================
+   CYBERSAFE - CLEAN STYLE SHEET
+   Desktop + Tablet + Mobile
+   ========================================= */
+
+/* ---------- Base ---------- */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    width: 100%;
+    overflow-x: hidden;
+}
+
 body {
-    background-color: #f4f7fb;
+    margin: 0;
+    width: 100%;
+    background-color: #071426;
+    color: #F1F5F9;
     font-family: Arial, sans-serif;
     text-align: center;
+    overflow-x: hidden;
 }
 
 h1 {
-    color: #123c73;
+    color: #00C6D7;
 }
 
 p {
-    color: #555;
+    color: #B8C5D6;
     font-size: 18px;
 }
 
+/* ---------- Navbar ---------- */
 .navbar {
-    background-color: #123c73;
-    color: white;
-    padding: 15px 30px;
-
+    width: 100%;
+    background-color: #0A1428;
+    border-bottom: 2px solid #00C6D7;
+    padding: 12px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 20px;
 }
 
 .logo {
+    color: #F1F5F9;
     font-size: 24px;
     font-weight: bold;
+    white-space: nowrap;
 }
 
 .nav-links {
     display: flex;
-    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    flex-wrap: wrap;
 }
 
 .nav-links a {
-    color: white;
+    color: #DCE6F0;
     text-decoration: none;
-    font-size: 15px;
+    font-size: 14px;
+    white-space: nowrap;
 }
 
 .nav-links a:hover {
-    text-decoration: underline;
-}
-
-.hero {
-    min-height: 400px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    text-align: center;
-    padding: 40px 20px;
-}
-
-.hero-content {
-    max-width: 800px;
-}
-
-.hero h1 {
-    font-size: 48px;
-    margin-bottom: 20px;
-}
-
-.hero p {
-    font-size: 19px;
-    line-height: 1.6;
-    margin-bottom: 30px;
-}
-
-.hero-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-}
-
-.btn {
-    padding: 12px 22px;
-    border-radius: 6px;
+    color: #00C6D7;
     text-decoration: none;
-    font-weight: bold;
 }
 
-.primary-btn {
-    background-color: #123c73;
-    color: white;
-}
-
-.secondary-btn {
-    border: 2px solid #123c73;
-    color: #123c73;
-}
-.awareness {
-    padding: 70px 30px;
-    background-color: #f4f7fb;
-    text-align: center;
-}
-
-.awareness h2 {
-    font-size: 36px;
-    color: #123c73;
-    margin-bottom: 10px;
-}
-
-.section-description {
-    color: #555;
-    font-size: 17px;
-    margin-bottom: 40px;
-}
-
-.threat-grid {
-    max-width: 1100px;
-    margin: 0 auto;
-
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
-}
-
-.threat-card {
-    background-color: white;
-    padding: 30px;
-    border-radius: 10px;
-
-    text-align: left;
-
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
-
-    transition: transform 0.2s;
-}
-
-.threat-card:hover {
-    transform: translateY(-5px);
-}
-
-.threat-icon {
-    font-size: 35px;
-    margin-bottom: 15px;
-}
-
-.threat-card h3 {
-    color: #123c73;
-    font-size: 22px;
-}
-
-.threat-card p {
-    color: #555;
-    line-height: 1.6;
-}
-
-.threat-card a {
-    color: #123c73;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.threat-card a:hover {
-    text-decoration: underline;
-}
-
-/* Tablet */
-@media (max-width: 900px) {
-
-    .nav-links {
-        gap: 10px;
-    }
-
-    .nav-links a {
-        font-size: 13px;
-    }
-
-    .hero h1 {
-        font-size: 40px;
-    }
-
-    .threat-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-
-/* Mobile */
-@media (max-width: 600px) {
-
-    .navbar {
-        flex-direction: column;
-        gap: 15px;
-        padding: 15px;
-    }
-
-    .nav-links {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 10px;
-    }
-
-    .nav-links a {
-        font-size: 13px;
-    }
-
-    .hero {
-        min-height: 400px;
-        padding: 30px 15px;
-    }
-
-    .hero h1 {
-        font-size: 32px;
-    }
-
-    .hero p {
-        font-size: 16px;
-    }
-
-    .hero-buttons {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .btn {
-        width: 200px;
-        text-align: center;
-    }
-
-    .awareness {
-        padding: 50px 15px;
-    }
-
-    .awareness h2 {
-        font-size: 28px;
-    }
-
-    .threat-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .threat-card {
-        padding: 25px;
-    }
-}
-
-.result-box {
-    max-width: 600px;
-    margin: 30px auto;
-    padding: 25px;
-
-    background-color: white;
-    border-radius: 10px;
-
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-
-    text-align: left;
-}
-
-.result-box h2 {
-    color: #b42318;
-}
-
-.result-box p {
-    margin: 10px 0;
-}
-
-.result-box.safe h2 {
-    color: #18794e;
-}
-
-.success-message {
-    max-width: 600px;
-    margin: 30px auto;
-    padding: 20px;
-
-    background-color: #e8f5e9;
-    border-radius: 10px;
-
-    text-align: center;
-}
-
-.success-message h2 {
-    color: #18794e;
-}
-
-.success-message p {
-    color: #333;
-}
-
-.warning-box {
-    margin-top: 20px;
-    padding: 15px;
-    border-left: 5px solid #d32f2f;
-    background-color: #fff3f3;
-    border-radius: 5px;
-}
-
-.warning-box h3 {
-    margin-top: 0;
-    color: #d32f2f;
-}
-
-.warning-box p {
-    margin-bottom: 0;
-    line-height: 1.6;
-}
-
-/* URL Risk Colors */
-
-
-.risk-low {
-    color: #198754 !important;
-}
-
-.risk-medium {
-    color: #f57c00 !important;
-}
-
-.risk-high {
-    color: #d32f2f !important;
-}
-
-/* Report Cybercrime navbar button */
 .nav-links a:last-child {
     background-color: #d32f2f;
     color: white;
     padding: 8px 12px;
+    margin-left: 4px;
     border-radius: 6px;
     font-weight: bold;
 }
 
 .nav-links a:last-child:hover {
     background-color: #b71c1c;
-    text-decoration: none;
 }
 
-/* Report Cybercrime Page */
-
-.report-cybercrime {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 50px 20px;
-    text-align: center;
-}
-
-.report-cybercrime > h1 {
-    margin-bottom: 15px;
-}
-
-.report-cybercrime > p {
-    max-width: 800px;
-    margin: 0 auto 35px;
-    line-height: 1.6;
-}
-
-.report-card {
-    background-color: white;
-    max-width: 650px;
-    margin: 25px auto;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
-    border: 1px solid #ddd;
-}
-
-.report-card h2 {
-    margin-bottom: 12px;
-}
-
-.report-card p {
-    margin-bottom: 20px;
-    line-height: 1.6;
-}
-
-.report-card .btn {
-    display: inline-block;
-}
-
-.notice-box {
-    max-width: 650px;
-    margin: 30px auto;
-    padding: 20px;
-    background-color: #fff8e1;
-    border-left: 5px solid #ff9800;
-    border-radius: 8px;
-}
-
-.notice-box h3 {
-    margin-top: 0;
-}
-
-.notice-box p {
-    margin-bottom: 0;
-    line-height: 1.6;
-}
-
-/* Fix navbar spacing */
-
-.navbar {
-    padding: 12px 20px;
-}
-
-.nav-links {
+/* ---------- Hero / Home ---------- */
+.hero {
+    min-height: 400px;
+    padding: 40px 20px;
+    background-color: #071426;
     display: flex;
+    justify-content: center;
     align-items: center;
-    gap: 14px;
-    flex-wrap: wrap;
-}
-
-.nav-links a {
-    font-size: 14px;
-    white-space: nowrap;
-}
-
-.nav-links a:last-child {
-    padding: 8px 12px;
-    margin-left: 4px;
-}
-
-/* =========================================
-   AWARENESS DETAIL PAGE
-   ========================================= */
-
-.awareness-detail {
-    padding: 50px 20px;
     text-align: center;
 }
 
-.detail-container {
-    max-width: 850px;
-    margin: 0 auto;
+.hero-content {
+    width: 100%;
+    max-width: 800px;
 }
-
-.detail-icon {
-    font-size: 60px;
-    margin-bottom: 10px;
-}
-
-.detail-container h1 {
-    color: #a78bfa;
-    font-size: 42px;
-    margin-bottom: 15px;
-}
-
-.detail-description {
-    max-width: 750px;
-    margin: 0 auto 35px;
-    color: #c4bfd8;
-    font-size: 18px;
-    line-height: 1.7;
-}
-
-.detail-card {
-    background-color: #211936;
-    border: 1px solid #352650;
-    border-radius: 12px;
-    padding: 28px 35px;
-    margin: 25px auto;
-    text-align: left;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
-}
-
-.detail-card:hover {
-    border-color: #8b5cf6;
-}
-
-.detail-card h2 {
-    color: #a78bfa;
-    margin-top: 0;
-    margin-bottom: 20px;
-}
-
-.detail-card ul {
-    margin: 0;
-    padding-left: 25px;
-}
-
-.detail-card li {
-    color: #cbd5e1;
-    font-size: 17px;
-    line-height: 1.8;
-    margin-bottom: 8px;
-}
-
-.detail-container .btn {
-    display: inline-block;
-    margin-top: 15px;
-}
-
-
-/* Mobile */
-@media (max-width: 600px) {
-
-    .detail-container h1 {
-        font-size: 32px;
-    }
-
-    .detail-card {
-        padding: 22px;
-    }
-
-    .detail-card li {
-        font-size: 15px;
-    }
-
-}     
 
 .hero-content > h1:first-child {
     font-size: 32px;
@@ -518,101 +117,34 @@ p {
     margin-bottom: 20px;
 }
 
-
-
-
-
-
-
-
-
-
-
-/* =========================================
-   CYBERSAFE DARK NAVY + CYAN THEME
-   ========================================= */
-
-body {
-    background-color: #071426;
-    color: #F1F5F9;
-}
-
-/* Main headings */
-h1 {
-    color: #00C6D7;
-}
-
-p {
-    color: #B8C5D6;
-}
-
-
-/* =========================================
-   NAVBAR
-   ========================================= */
-
-.navbar {
-    background-color: #0A1428;
-    border-bottom: 2px solid #00C6D7;
-}
-
-.logo {
-    color: #F1F5F9;
-}
-
-.nav-links {
-    gap: 14px;
-}
-
-.nav-links a {
-    color: #DCE6F0;
-}
-
-.nav-links a:hover {
-    color: #00C6D7;
-    text-decoration: none;
-}
-
-
-/* Report Cybercrime button */
-.nav-links a:last-child {
-    background-color: #d32f2f;
-    color: white;
-    padding: 8px 12px;
-    border-radius: 6px;
-}
-
-.nav-links a:last-child:hover {
-    background-color: #b71c1c;
-}
-
-
-/* =========================================
-   HERO
-   ========================================= */
-
-.hero {
-    background-color: #071426;
-}
-
 .hero h1 {
     color: #F1F5F9;
 }
 
 .hero p {
     color: #A9B8C9;
+    font-size: 19px;
+    line-height: 1.6;
+    margin-bottom: 30px;
 }
 
-
-/* Cyan highlighted text */
 .hero h1 span {
     color: #00C6D7;
 }
 
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
 
-/* =========================================
-   BUTTONS
-   ========================================= */
+.btn {
+    display: inline-block;
+    padding: 12px 22px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+}
 
 .primary-btn {
     background-color: #00C6D7;
@@ -635,32 +167,42 @@ p {
     color: #071426;
 }
 
-
-/* =========================================
-   AWARENESS
-   ========================================= */
-
+/* ---------- Awareness / Threat Cards ---------- */
 .awareness {
+    padding: 70px 30px;
     background-color: #09182B;
+    text-align: center;
 }
 
 .awareness h2 {
+    font-size: 36px;
     color: #00C6D7;
+    margin-bottom: 10px;
 }
 
 .section-description {
     color: #9AAABD;
+    font-size: 17px;
+    margin-bottom: 40px;
 }
 
-
-/* =========================================
-   THREAT CARDS
-   ========================================= */
+.threat-grid {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
 
 .threat-card {
     background-color: #0D2035;
     border: 1px solid #16445A;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: left;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+    transition: transform 0.2s;
 }
 
 .threat-card:hover {
@@ -668,129 +210,66 @@ p {
     transform: translateY(-5px);
 }
 
+.threat-icon {
+    font-size: 35px;
+    margin-bottom: 15px;
+}
+
 .threat-card h3 {
     color: #00C6D7;
+    font-size: 22px;
 }
 
 .threat-card p {
     color: #B8C5D6;
+    line-height: 1.6;
 }
 
 .threat-card a {
     color: #12D8E8;
+    text-decoration: none;
+    font-weight: bold;
 }
 
 .threat-card a:hover {
     color: #7DEBF3;
 }
 
-
-/* =========================================
-   RESULT BOXES
-   ========================================= */
-
+/* ---------- Result / Messages ---------- */
 .result-box {
+    width: calc(100% - 30px);
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 25px;
     background-color: #0D2035;
     border: 1px solid #16445A;
+    border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+    text-align: left;
+}
+
+.result-box h2 {
+    color: #b42318;
 }
 
 .result-box p {
     color: #B8C5D6;
+    margin: 10px 0;
 }
 
-
-/* =========================================
-   AWARENESS DETAIL PAGE
-   ========================================= */
-
-.awareness-detail {
-    background-color: #071426;
+.result-box.safe h2 {
+    color: #18794e;
 }
-
-.detail-container h1 {
-    color: #00C6D7;
-}
-
-.detail-description {
-    color: #B8C5D6;
-}
-
-.detail-card {
-    background-color: #0D2035;
-    border: 1px solid #16445A;
-}
-
-.detail-card:hover {
-    border-color: #00C6D7;
-}
-
-.detail-card h2 {
-    color: #00C6D7;
-}
-
-.detail-card li {
-    color: #C7D3DF;
-}
-
-
-/* =========================================
-   REPORT CYBERCRIME
-   ========================================= */
-
-.report-cybercrime {
-    background-color: #071426;
-}
-
-.report-cybercrime h1 {
-    color: #00C6D7;
-}
-
-.report-cybercrime > p {
-    color: #B8C5D6;
-}
-
-.report-card {
-    background-color: #0D2035;
-    border: 1px solid #16445A;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
-}
-
-.report-card:hover {
-    border-color: #00C6D7;
-}
-
-.report-card h2 {
-    color: #F1F5F9;
-}
-
-.report-card p {
-    color: #9AAABD;
-}
-
-
-/* Important notice */
-.notice-box {
-    background-color: #302315;
-    border: 1px solid #F59E0B;
-}
-
-.notice-box h3 {
-    color: #FBBF24;
-}
-
-.notice-box p {
-    color: #FDE68A;
-}
-
-
-/* =========================================
-   SUCCESS MESSAGE
-   ========================================= */
 
 .success-message {
+    width: calc(100% - 30px);
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 20px;
     background-color: #0B2925;
     border: 1px solid #10B981;
+    border-radius: 10px;
+    text-align: center;
 }
 
 .success-message h2 {
@@ -801,29 +280,26 @@ p {
     color: #C7F9E8;
 }
 
-
-/* =========================================
-   WARNING
-   ========================================= */
-
 .warning-box {
+    margin-top: 20px;
+    padding: 15px;
     background-color: #35191F;
     border-left: 5px solid #EF4444;
+    border-radius: 5px;
 }
 
 .warning-box h3 {
+    margin-top: 0;
     color: #F87171;
 }
 
 .warning-box p {
+    margin-bottom: 0;
+    line-height: 1.6;
     color: #FECACA;
 }
 
-
-/* =========================================
-   KEEP URL RISK COLORS
-   ========================================= */
-
+/* ---------- URL Risk ---------- */
 .risk-low {
     color: #198754 !important;
 }
@@ -836,28 +312,152 @@ p {
     color: #d32f2f !important;
 }
 
-.hero-content > h1:first-child {
-    font-size: 32px;
-    color: #00C6D7;
+/* ---------- Awareness Detail ---------- */
+.awareness-detail {
+    padding: 50px 20px;
+    background-color: #071426;
+    text-align: center;
+}
+
+.detail-container {
+    width: 100%;
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+.detail-icon {
+    font-size: 60px;
     margin-bottom: 10px;
 }
 
-.hero-content > p:first-of-type {
-    font-size: 17px;
-    margin-bottom: 35px;
+.detail-container h1 {
+    color: #00C6D7;
+    font-size: 42px;
+    margin-bottom: 15px;
 }
 
-.hero-content > h1:nth-of-type(2) {
-    font-size: 48px;
-    color: #F1F5F9;
+.detail-description {
+    max-width: 750px;
+    margin: 0 auto 35px;
+    color: #B8C5D6;
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+.detail-card {
+    background-color: #0D2035;
+    border: 1px solid #16445A;
+    border-radius: 12px;
+    padding: 28px 35px;
+    margin: 25px auto;
+    text-align: left;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+}
+
+.detail-card:hover {
+    border-color: #00C6D7;
+}
+
+.detail-card h2 {
+    color: #00C6D7;
+    margin-top: 0;
     margin-bottom: 20px;
 }
 
-/* =========================================
-   REPORT NUMBER PAGE
-   ========================================= */
+.detail-card ul {
+    margin: 0;
+    padding-left: 25px;
+}
 
+.detail-card li {
+    color: #C7D3DF;
+    font-size: 17px;
+    line-height: 1.8;
+    margin-bottom: 8px;
+}
+
+.detail-container .btn {
+    display: inline-block;
+    margin-top: 15px;
+}
+
+/* ---------- Report Cybercrime ---------- */
+.report-cybercrime {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 50px 20px;
+    background-color: #071426;
+    text-align: center;
+}
+
+.report-cybercrime > h1 {
+    color: #00C6D7;
+    margin-bottom: 15px;
+}
+
+.report-cybercrime > p {
+    max-width: 800px;
+    margin: 0 auto 35px;
+    color: #B8C5D6;
+    line-height: 1.6;
+}
+
+.report-card {
+    width: 100%;
+    max-width: 650px;
+    margin: 25px auto;
+    padding: 30px;
+    background-color: #0D2035;
+    border: 1px solid #16445A;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+}
+
+.report-card:hover {
+    border-color: #00C6D7;
+}
+
+.report-card h2 {
+    margin-bottom: 12px;
+    color: #F1F5F9;
+}
+
+.report-card p {
+    margin-bottom: 20px;
+    color: #9AAABD;
+    line-height: 1.6;
+}
+
+.report-card .btn {
+    display: inline-block;
+}
+
+.notice-box {
+    width: 100%;
+    max-width: 650px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #302315;
+    border: 1px solid #F59E0B;
+    border-left: 5px solid #F59E0B;
+    border-radius: 8px;
+}
+
+.notice-box h3 {
+    margin-top: 0;
+    color: #FBBF24;
+}
+
+.notice-box p {
+    margin-bottom: 0;
+    color: #FDE68A;
+    line-height: 1.6;
+}
+
+/* ---------- Report Number ---------- */
 .report-number-page {
+    width: 100%;
     max-width: 800px;
     margin: 0 auto;
     padding: 45px 20px;
@@ -876,10 +476,8 @@ p {
     margin-bottom: 30px;
 }
 
-
-/* Report form card */
-
 .report-form {
+    width: 100%;
     max-width: 600px;
     margin: 0 auto;
     padding: 30px;
@@ -888,9 +486,6 @@ p {
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
 }
-
-
-/* Form fields */
 
 .report-form input,
 .report-form select,
@@ -906,16 +501,10 @@ p {
     font-size: 15px;
 }
 
-
-/* Textarea */
-
 .report-form textarea {
     min-height: 120px;
     resize: vertical;
 }
-
-
-/* Focus effect */
 
 .report-form input:focus,
 .report-form select:focus,
@@ -924,9 +513,6 @@ p {
     border-color: #00C6D7;
     box-shadow: 0 0 5px rgba(0, 198, 215, 0.25);
 }
-
-
-/* Submit button */
 
 .report-form button {
     width: 100%;
@@ -944,54 +530,14 @@ p {
     background-color: #12D8E8;
 }
 
-
-/* Success message */
-
 .report-number-page .success-message {
     max-width: 600px;
     margin: 25px auto;
 }
 
-
-/* Mobile */
-
-@media (max-width: 600px) {
-
-    .report-number-page {
-        padding: 30px 15px;
-    }
-
-    .report-form {
-        padding: 20px;
-    }
-
-}
-
-/* Fix navbar layout */
-
-.navbar {
-    width: 100%;
-    box-sizing: border-box;
-    overflow: hidden;
-}
-
-.nav-links {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    flex-wrap: wrap;
-}
-
-.nav-links a {
-    white-space: nowrap;
-    font-size: 14px;
-}
-
-/* =========================================
-   CHECKER PAGES
-   ========================================= */
-
+/* ---------- Checker Pages ---------- */
 .checker-page {
+    width: 100%;
     max-width: 800px;
     margin: 0 auto;
     padding: 45px 20px;
@@ -1010,10 +556,8 @@ p {
     margin-bottom: 30px;
 }
 
-
-/* Checker form */
-
 .checker-page form {
+    width: 100%;
     max-width: 600px;
     margin: 0 auto;
     padding: 30px;
@@ -1021,50 +565,27 @@ p {
     border: 1px solid #16445A;
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
-
     display: flex;
     flex-direction: column;
     gap: 15px;
 }
 
-
-/* Textarea */
-
-.checker-page textarea {
-    width: 100%;
-    box-sizing: border-box;
-    min-height: 180px;
-    padding: 12px;
-
-    background-color: #071426;
-    color: #F1F5F9;
-
-    border: 1px solid #35566A;
-    border-radius: 6px;
-
-    font-size: 15px;
-    resize: vertical;
-}
-
-
-/* Input */
-
+.checker-page textarea,
 .checker-page input {
     width: 100%;
     box-sizing: border-box;
     padding: 12px;
-
     background-color: #071426;
     color: #F1F5F9;
-
     border: 1px solid #35566A;
     border-radius: 6px;
-
     font-size: 15px;
 }
 
-
-/* Focus */
+.checker-page textarea {
+    min-height: 180px;
+    resize: vertical;
+}
 
 .checker-page textarea:focus,
 .checker-page input:focus {
@@ -1073,22 +594,15 @@ p {
     box-shadow: 0 0 5px rgba(0, 198, 215, 0.25);
 }
 
-
-/* Check button */
-
 .checker-page button {
     width: 100%;
     padding: 12px;
-
     background-color: #00C6D7;
     color: #071426;
-
     border: none;
     border-radius: 6px;
-
     font-size: 16px;
     font-weight: bold;
-
     cursor: pointer;
 }
 
@@ -1096,7 +610,166 @@ p {
     background-color: #12D8E8;
 }
 
+/* =========================================
+   RESPONSIVE DESIGN
+   Applies to ALL CyberSafe pages
+   ========================================= */
 
+/* Tablet */
+@media (max-width: 900px) {
+    .navbar {
+        padding: 12px 15px;
+    }
 
+    .nav-links {
+        gap: 10px;
+    }
 
+    .nav-links a {
+        font-size: 13px;
+    }
 
+    .hero-content > h1:nth-of-type(2) {
+        font-size: 40px;
+    }
+
+    .threat-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .navbar {
+        flex-direction: column;
+        justify-content: center;
+        gap: 14px;
+        padding: 15px 10px;
+    }
+
+    .logo {
+        font-size: 24px;
+    }
+
+    .nav-links {
+        width: 100%;
+        justify-content: center;
+        gap: 10px 14px;
+    }
+
+    .nav-links a {
+        font-size: 13px;
+    }
+
+    .nav-links a:last-child {
+        margin-left: 0;
+    }
+
+    .hero {
+        min-height: 0;
+        padding: 50px 15px;
+    }
+
+    .hero-content > h1:first-child {
+        font-size: 28px;
+    }
+
+    .hero-content > h1:nth-of-type(2) {
+        font-size: 32px;
+        line-height: 1.2;
+    }
+
+    .hero-content > p:first-of-type,
+    .hero p {
+        font-size: 16px;
+        line-height: 1.6;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .btn {
+        width: min(100%, 320px);
+        text-align: center;
+    }
+
+    .awareness {
+        padding: 50px 15px;
+    }
+
+    .awareness h2 {
+        font-size: 28px;
+    }
+
+    .section-description {
+        font-size: 16px;
+    }
+
+    .threat-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .threat-card {
+        padding: 25px;
+    }
+
+    .threat-card h3 {
+        font-size: 22px;
+    }
+
+    .threat-card p {
+        font-size: 16px;
+    }
+
+    .detail-container h1 {
+        font-size: 32px;
+    }
+
+    .detail-description {
+        font-size: 16px;
+    }
+
+    .detail-card {
+        padding: 22px;
+    }
+
+    .detail-card li {
+        font-size: 15px;
+    }
+
+    .report-cybercrime,
+    .report-number-page,
+    .checker-page {
+        padding: 35px 15px;
+    }
+
+    .report-card,
+    .report-form,
+    .checker-page form {
+        padding: 20px;
+    }
+
+    .report-number-page h1,
+    .checker-page h1 {
+        font-size: 30px;
+    }
+
+    .report-number-page > p,
+    .checker-page > p {
+        font-size: 16px;
+    }
+
+    .result-box,
+    .success-message {
+        width: calc(100% - 30px);
+        padding: 20px;
+    }
+
+    .warning-box,
+    .notice-box {
+        padding: 15px;
+    }
+}
